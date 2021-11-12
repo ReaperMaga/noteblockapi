@@ -12,6 +12,20 @@ mvn install
 ```
 
 #### Usage:
+
+In your plugin/main class:
+```java
+private NoteblockAPI noteBlockAPI;
+
+@Override
+public void onEnable() {
+    this.noteBlockAPI = new NoteBlockAPI(this);
+    this.noteBlockAPI.enable();
+}
+
+```
+
+In your desired feature:
 ```java
 Song song = NBSDecoder.parse(file);
 songPlayer = new RadioSongPlayer(song);
